@@ -37,7 +37,7 @@ SELECT fi.id,
     	WHEN a.days_exposition >= 31 AND a.days_exposition <= 90 THEN 'До трех месяцев'
     	WHEN a.days_exposition >= 91 AND a.days_exposition <= 180 THEN 'До полугода'
     	WHEN a.days_exposition >= 181 THEN 'Более полугода'
-    	ELSE 'non category' -- в задании написали объединить, если объявления ещё на продаже, а в таблице её нет
+    	ELSE 'non category'
     	END AS activ_days,
     	a.last_price/f.total_area AS price_kv_m,
     	f.total_area,
@@ -147,4 +147,5 @@ filtered_id AS(
     LEFT JOIN real_estate.flats AS f USING(id)
     GROUP BY ma.date_withdrawal
     ORDER BY COUNT(ma.id) DESC;
+
 
