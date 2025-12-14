@@ -1,8 +1,5 @@
 /* Проект первого модуля: анализ данных для агентства недвижимости
- * Часть 2. Решаем ad hoc задачи
- * 
- * Автор: Шрайер Людмила
- * Дата: 27.09
+Решаем ad hoc задачи
 */
 
 
@@ -150,8 +147,4 @@ filtered_id AS(
     LEFT JOIN real_estate.flats AS f USING(id)
     GROUP BY ma.date_withdrawal
     ORDER BY COUNT(ma.id) DESC;
-    
-    
-    
--- Продолжите запрос здесь month_advertisement AS (
--- Используйте id объявлений (СТЕ filtered_id), которые не содержат выбросы при анализе данных
+
