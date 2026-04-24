@@ -1,7 +1,4 @@
-/* Проект первого модуля: анализ данных для агентства недвижимости
-Решаем ad hoc задачи
-*/
-
+/* Анализ данных для агентства недвижимости*/
 
 
 -- Задача 1: Время активности объявлений
@@ -79,7 +76,7 @@ WITH limits AS ( -- дата публикации
         PERCENTILE_CONT(0.01) WITHIN GROUP (ORDER BY ceiling_height) AS ceiling_height_limit_l
     FROM real_estate.flats
 ),
--- Найдём id объявлений, которые не содержат выбросы, также оставим пропущенные данные:
+-- Найдём id объявлений, которые не содержат выбросы:
 filtered_id AS(
     SELECT id
     FROM real_estate.flats
